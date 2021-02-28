@@ -13,11 +13,10 @@ for variable in df_dict.columns:
     for key in dfv.index:
         value=dfv.loc[key]
         d_dict[variable][key]=value
-        if variable=str(variable).upper():
-            try:
-                key_n=int(key)
-                d_dict[variable][key_n]=value
-            except: pass
+        try:
+            key_n=int(key)
+            d_dict[variable][key_n]=value
+        except: pass
 
 d_describe=dict()
 for key in df_describe.index:
