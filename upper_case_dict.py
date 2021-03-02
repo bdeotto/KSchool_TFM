@@ -59,17 +59,17 @@ Cada variable categórica está asociada a un diccionario descrito en las tablas
 Tabla1 a Tabla3.
 
 La mayoría de estos diccionarios están asociados a más de una variable.
-**Las herramientas de traducción importan los diccionarios de la tabla de
+Las herramientas de traducción importan los diccionarios de la tabla de
 diseño de la encuesta por nombre de diccionario y luego asocian cada variable
-al diccionario que le corresponde**. Este proceso es más largo que construir
+al diccionario que le corresponde. Este proceso es más largo que construir
 directamente un diccionario para cada variable, pero tiene la ventaja de ser
 más eficiente en el uso de memoria:
 
-- El **diccionario D_map_dict** es un diccionario auxiliar que asocia cada
+- El diccionario D_map_dict es un diccionario auxiliar que asocia cada
 variable a nombre del diccionario que le corresponde.
-- La **función diccionario** importa los diccionarios por su nombre de
+- La función diccionario importa los diccionarios por su nombre de
 diccionario desde el fichero de diseño de la encuesta.
-- El diccionario **D_dict** asocia cada variable al diccionario de traducción
+- El diccionario D_dict asocia cada variable al diccionario de traducción
 que le corresponde. Así, para la variable 'nombre_de_variable', el diccionario
 D_dict['nombre_de_variable'] tiene como claves los valores de la variable
 categórica y como valores las interpretaciones de los códigos de acuerdo con
@@ -97,8 +97,8 @@ la encuesta. Las tablas se corresponden con los dataframes D_df_aux de índice
 1 a 3.
 
 Para importar los diccionaros identificamos la hoja y las filas de inicio y
-final de cada uno. Estas serán las entradas de la función 'diccionario' que
-recupera los diccionarios uno a uno.
+final de cada uno. Estas son entradas (automáticas) de la función 'diccionario'
+que recupera los diccionarios uno a uno.
 
 Se usan las siguientes herramientas:
 
