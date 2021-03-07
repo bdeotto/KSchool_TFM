@@ -5,6 +5,7 @@ import numpy as np
 df_dict=pd.read_csv('data/D_dict.csv',index_col=0)
 df_describe=pd.read_csv('data/D_describe.csv',index_col=0)
 df_ambito_to_rama=pd.read_csv('data/D_ambito_to_rama.csv',index_col=0)
+df_cnae_a_num=pd.read_csv('data/D_cnae_a_num.csv',index_col=0)
 
 d_dict=dict()
 for variable in df_dict.columns:
@@ -26,3 +27,7 @@ for key in df_describe.index:
 D_ambito_to_rama=dict()
 for key in df_ambito_to_rama.index:
     D_ambito_to_rama[key]=df_ambito_to_rama['valor'].loc[key]
+
+D_cnae_a_num=dict()
+for key in df_cnae_a_num.index:
+    D_cnae_a_num[key]=df_cnae_a_num['valor'].loc[key]
