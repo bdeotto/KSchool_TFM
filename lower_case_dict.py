@@ -1,13 +1,9 @@
 import pandas as pd
 import numpy as np
 
+# Diccionario de diccionarios d_dict:
 
 df_dict=pd.read_csv('data/D_dict.csv',index_col=0)
-df_describe=pd.read_csv('data/D_describe.csv',index_col=0)
-df_ambito_to_rama=pd.read_csv('data/D_ambito_to_rama.csv',index_col=0)
-df_ocupaciones=pd.read_csv('data/D_ocupaciones.csv',index_col=0)
-df_cnae_a_num=pd.read_csv('data/D_cnae_a_num.csv',index_col=0)
-
 d_dict=dict()
 for variable in df_dict.columns:
     d_dict[variable]=dict()
@@ -21,18 +17,29 @@ for variable in df_dict.columns:
             d_dict[variable][key_n]=value
         except: pass
 
-d_describe=dict()
-for key in df_describe.index:
-    d_describe[key]=df_describe['valor'].loc[key]
+# Resto de diccionarios:
 
-D_ambito_to_rama=dict()
-for key in df_ambito_to_rama.index:
-    D_ambito_to_rama[key]=df_ambito_to_rama['valor'].loc[key]
+df_describe=pd.read_csv('data/D_describe.csv',index_col=0)
+d_describe=dict(zip(df_describe.index,\
+                         df_describe[df_describe.columns[0]]))
 
-D_ocupaciones=dict()
-for key in df_ocupaciones.index:
-    D_ocupaciones[key]=df_ocupaciones['valor'].loc[key]
+df_titulo_grado_a_rama=pd.read_csv('data/D_titulo_grado_a_rama.csv',index_col=0)
+D_titulo_grado_a_rama=dict(zip(df_titulo_grado_a_rama.index,\
+                    df_titulo_grado_a_rama[df_titulo_grado_a_rama.columns[0]]))
 
-D_cnae_a_num=dict()
-for key in df_cnae_a_num.index:
-    D_cnae_a_num[key]=df_cnae_a_num['valor'].loc[key]
+df_titulo_grado_a_ambito=pd.read_csv('data/D_titulo_grado_a_ambito.csv',\
+                                      index_col=0)
+D_titulo_grado_a_ambito=dict(zip(df_titulo_grado_a_ambito.index,\
+                df_titulo_grado_a_ambito[df_titulo_grado_a_ambito.columns[0]]))
+
+df_ambito_a_rama=pd.read_csv('data/D_ambito_a_rama.csv',index_col=0)
+D_ambito_a_rama=dict(zip(df_ambito_a_rama.index,\
+                         df_ambito_a_rama[df_ambito_a_rama.columns[0]]))
+
+df_ocupaciones=pd.read_csv('data/D_ocupaciones.csv',index_col=0)
+D_ocupaciones=dict(zip(df_ocupaciones.index,\
+                         df_ocupaciones[df_ocupaciones.columns[0]]))
+
+df_cnae_a_num=pd.read_csv('data/D_cnae_a_num.csv',index_col=0)
+D_cnae_a_num=dict(zip(df_cnae_a_num.index,\
+                         df_cnae_a_num[df_cnae_a_num.columns[0]]))
