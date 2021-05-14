@@ -1,17 +1,20 @@
-import pandas as pd
-import numpy as np
 
-def proporciones(df,col,dropna=False):
+def proporciones(col,dropna=False):
     """ Frecuencias relativas de los valores que toma una variable categórica en orden ascendente.
     Si dropna=False, incluye los valores NaN."""
+
+    global df
     out=df[col].value_counts(normalize=True,ascending=False,dropna=dropna)
+    out=pd.DataFrame(out)
     return out
 
-def dist_condicionada(df,col,cond,rev=False,dropna=True):
+def dist_condicionada(col,cond,rev=False,dropna=True):
     """ Distribución de la columna col condicionada por la columna cond y diferencias relativas con la
     distribución no condicionada de la variable col.
     Si rev=True, distribución de cond condicionada por col.
     Si dropna=True, prescinde de registros NaN."""
+
+    global df
     # Permutación de col y cond con rev=True:
     if rev==True:
         temp=col
