@@ -36,3 +36,5 @@ El resto de archivos (con extensión py) son módulos necesarios para la creaci�
 
 
 Las rutas en los ficheros están referidas a un directorio 'data' que contiene los archivos facilitados por el INE y los archivos csv creados a lo largo del proceso de transformación y análisis de los datos. Esta carpeta puede descargarse en la localización: 
+
+https://drive.google.com/drive/folders/1Ty3478hfuIxwjjT0mK5Rsy2Mx4JuwWAt?usp=sharing
